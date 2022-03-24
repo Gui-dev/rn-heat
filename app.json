@@ -1,0 +1,12 @@
+{
+  "name": "rn-heat",
+  "displayName": "rn-heat",
+  "expo": {
+    "name": "rn-heat",
+    "slug": "rn-heat",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
