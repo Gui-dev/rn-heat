@@ -26,6 +26,8 @@ export const UserPhoto = ({ imageUri, sizes = 'NORMAL' }: UserPhotoProps) => {
 
   return (
     <Container
+      start={{ x: 0, y: 0.8 }}
+      end={{ x: 0.9, y: 1 }}
       colors={[COLORS.PINK, COLORS.YELLOW]}
       containerSize={ containerSize }
     >
