@@ -17,11 +17,13 @@ export const Header = () => {
     <Container>
       <LogoSvg />
       <UserInfo>
-        <TouchableOpacity
-          onPress={ handleSignOut }
-        >
-          <LogoutText>Sair</LogoutText>
-        </TouchableOpacity>
+        { user &&
+          <TouchableOpacity
+            onPress={ handleSignOut }
+          >
+            <LogoutText>Sair</LogoutText>
+          </TouchableOpacity>
+        }
         <UserPhoto imageUri={ user?.avatar_url }/>
       </UserInfo>
     </Container>
