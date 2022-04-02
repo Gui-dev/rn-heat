@@ -47,12 +47,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   useEffect(() => {
     const loadUser = async () => {
-      const user = await AsyncStorage.getItem(USER_STORAGE)
-      const token = await AsyncStorage.getItem(TOKEN_STORAGE)
+      const userStorage = await AsyncStorage.getItem(USER_STORAGE)
+      const tokenStorage = await AsyncStorage.getItem(TOKEN_STORAGE)
 
-      if (user && token) {
-        setUser(JSON.parse(user))
-        api.defaults.headers.common.Authorization = `Bearer ${token}`
+      if (userStorage && tokenStorage) {
+        setUser(JSON.parse(userStorage))
+        api.defaults.headers.common.Authorization = `Bearer ${tokenStorage}`
       }
       setIsLoading(false)
     }
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
         api.defaults.headers.common.Authorization = `Bearer ${userToken}`
         await AsyncStorage.setItem(USER_STORAGE, JSON.stringify(user))
-        await AsyncStorage.setItem(TOKEN_STORAGE, JSON.stringify(userToken))
+        await AsyncStorage.setItem(TOKEN_STORAGE, userToken)
 
         setUser(user)
       }
