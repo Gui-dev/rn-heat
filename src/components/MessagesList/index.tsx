@@ -9,6 +9,7 @@ export const MessagesList = () => {
   const [currentMessages, setCurrentMessages] = useState<MessageProps[]>([])
 
   const socket = io(String(api.defaults.baseURL))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const messagesQueue: MessageProps[] = []
 
   socket.on('new_message', (message) => {
