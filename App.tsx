@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native'
 import AppLoading from 'expo-app-loading'
 import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto'
 
+import { AuthProvider } from './src/contexts/auth'
 import { Home } from './src/screens/Home'
 
 export default function App () {
@@ -18,7 +19,9 @@ export default function App () {
   return (
     <>
       <StatusBar barStyle={'light-content'} backgroundColor="#121214"/>
-      <Home />
+      <AuthProvider>
+        <Home />
+      </AuthProvider>
     </>
   )
 }
